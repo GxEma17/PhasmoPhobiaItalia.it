@@ -1,0 +1,310 @@
+/* styles.css */
+
+/* Stile di base per il corpo della pagina */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    background-color: #000; /* Colore di fallback nel caso in cui il video non venga caricato */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita lo scrolling orizzontale */
+    position: relative; /* Necessario per posizionare l'overlay */
+}
+
+/* Video di sfondo */
+#background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adatta il video per coprire l'intero contenuto */
+    z-index: -2; /* Posiziona il video dietro agli altri contenuti */
+}
+
+/* Contenitore principale per il contenuto centrale */
+#main-content {
+    position: relative;
+    z-index: -1; /* Posiziona il contenuto sopra il video e sotto l'overlay */
+}
+
+/* Overlay semi-trasparente per il contenuto centrale */
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Sovrapposizione scura semi-trasparente */
+    z-index: -1; /* Posiziona l'overlay sopra il video ma sotto il contenuto */
+}
+
+/* Contenitore principale */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background-color: rgba(51, 51, 51, 0.7); /* Sfondo traslucido per la leggibilità del testo */
+    padding: 10px 0;
+    position: relative;
+    z-index: 1000; /* Assicura che l'header sia sopra altri contenuti */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo-img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+header .logo-img:hover {
+    transform: scale(1.1);
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navbar */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+nav ul li a.active {
+    color: #00c3ff;
+    font-weight: bold;
+    border-bottom: 2px solid #00c3ff;
+}
+
+nav ul li a:hover {
+    color: #00c3ff;
+    transform: translateY(-3px);
+}
+
+/* Layout principale */
+main {
+    display: flex;
+    margin-top: 20px;
+    flex: 1;
+}
+
+/* Contenuto principale */
+.content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Hero Section */
+#hero {
+    background: rgba(0, 0, 0, 0.5); /* Sovrapposizione scura per il testo */
+    padding: 100px 20px;
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#hero h2 {
+    font-size: 3em;
+    margin: 0;
+    animation: fadeIn 1s ease-in;
+}
+
+#hero p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.cta-button {
+    background-color: #00c3ff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #00c3ff;
+    transform: translateY(-3px);
+}
+
+/* News Section */
+#news {
+    padding: 20px;
+}
+
+.news-item {
+    background: rgba(0, 0, 0, 0.5); /* Sovrapposizione scura per il testo */
+    padding: 30px 10px;
+    text-align: center;
+    border-radius: 15px;
+    color: #fff;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Discord Section */
+#discord {
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.discord-button {
+    background-color: #7289da;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px; /* Rende il pulsante rotondo */
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.discord-button:hover {
+    background-color: #5b6eae;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(51, 51, 51, 0.7); /* Sfondo traslucido per la leggibilità del testo */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+footer .social-media {
+    margin-top: 10px;
+}
+
+footer .social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: color 0.3s ease-in-out;
+}
+
+footer .social-media a:hover {
+    color: #00c3ff;
+}
+
+/* Pulsante Scroll to Top */
+.scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00c3ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50%; /* Rende il pulsante rotondo */
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover {
+    background-color: #00c3ff;
+    transform: scale(1.1);
+}
+
+/* Animazioni */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries per la Responsività */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+}
+
+/* Pulsante Download */
+.download-button {
+    background-color: #00c3ff; /* Colore di sfondo del pulsante */
+    color: #fff; /* Colore del testo del pulsante */
+    padding: 10px 20px; /* Spaziatura interna del pulsante */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    border-radius: 5px; /* Angoli arrotondati del pulsante */
+    font-weight: bold; /* Testo in grassetto */
+    display: inline-block; /* Permette di aggiungere padding e margini */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Effetti di transizione */
+}
+
+.download-button:hover {
+    background-color: #00aaff; /* Colore di sfondo al passaggio del mouse */
+    transform: translateY(-3px); /* Effetto di sollevamento al passaggio del mouse */
+}
